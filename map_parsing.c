@@ -6,7 +6,7 @@
 /*   By: emurbane <emurbane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 16:37:10 by emurbane          #+#    #+#             */
-/*   Updated: 2025/12/05 16:37:32 by emurbane         ###   ########.fr       */
+/*   Updated: 2025/12/06 16:27:19 by emurbane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ void	read_map(char *file, t_game *game)
 	while (i < game->map_h)
 	{
 		game->map[i] = get_next_line(fd);
-		/* Usunięcie znaku nowej linii na końcu, jeśli istnieje */
 		if (game->map[i][ft_strlen(game->map[i]) - 1] == '\n')
 			game->map[i][ft_strlen(game->map[i]) - 1] = '\0';
 		i++;

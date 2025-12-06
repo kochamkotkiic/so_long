@@ -6,7 +6,7 @@
 /*   By: emurbane <emurbane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 16:36:44 by emurbane          #+#    #+#             */
-/*   Updated: 2025/12/05 16:43:35 by emurbane         ###   ########.fr       */
+/*   Updated: 2025/12/06 17:21:21 by emurbane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 # define KEY_A 97
 # define KEY_S 115
 # define KEY_D 100
-
 
 typedef struct s_game
 {

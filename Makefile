@@ -6,7 +6,7 @@ MLX_LIB = $(MLX_DIR)/libmlx.a
 LIBFT_DIR = ./libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
-# Flagi dla Linuxa (dostosuj jeśli używasz MacOS)
+
 MLX_FLAGS = -L$(MLX_DIR) -lmlx -L/usr/lib -lXext -lX11 -lm -lz
 
 SRC = main.c map_parsing.c map_check.c graphics.c events.c utils.c flood_fill.c

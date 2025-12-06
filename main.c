@@ -6,7 +6,7 @@
 /*   By: emurbane <emurbane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 16:36:54 by emurbane          #+#    #+#             */
-/*   Updated: 2025/12/05 16:36:55 by emurbane         ###   ########.fr       */
+/*   Updated: 2025/12/06 17:19:37 by emurbane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ int	main(int argc, char **argv)
 	game.mlx = mlx_init();
 	if (!game.mlx)
 		error_exit("Error\nMLX Init failed", &game);
-	game.win = mlx_new_window(game.mlx, game.map_w * 64, game.map_h * 64, "Cat vs Mice");
+	game.win = mlx_new_window(game.mlx, game.map_w * 64,
+			game.map_h * 64, "Alcoholic cat");
 	if (!game.win)
 		error_exit("Error\nWindow creation failed", &game);
 	init_graphics(&game);

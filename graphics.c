@@ -6,7 +6,7 @@
 /*   By: emurbane <emurbane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 16:38:06 by emurbane          #+#    #+#             */
-/*   Updated: 2025/12/05 16:38:08 by emurbane         ###   ########.fr       */
+/*   Updated: 2025/12/06 17:18:32 by emurbane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,16 @@ void	init_graphics(t_game *game)
 	int	w;
 	int	h;
 
-	game->img_wall = mlx_xpm_file_to_image(game->mlx, "textures/wall.xpm", &w, &h);
-	game->img_floor = mlx_xpm_file_to_image(game->mlx, "textures/floor.xpm", &w, &h);
-	game->img_player = mlx_xpm_file_to_image(game->mlx, "textures/player.xpm", &w, &h);
-	game->img_collect = mlx_xpm_file_to_image(game->mlx, "textures/collect.xpm", &w, &h);
-	game->img_exit = mlx_xpm_file_to_image(game->mlx, "textures/exit.xpm", &w, &h);
+	game->img_wall = mlx_xpm_file_to_image(game->mlx,
+			"textures/wall.xpm", &w, &h);
+	game->img_floor = mlx_xpm_file_to_image(game->mlx,
+			"textures/floor.xpm", &w, &h);
+	game->img_player = mlx_xpm_file_to_image(game->mlx,
+			"textures/player.xpm", &w, &h);
+	game->img_collect = mlx_xpm_file_to_image(game->mlx,
+			"textures/collect.xpm", &w, &h);
+	game->img_exit = mlx_xpm_file_to_image(game->mlx,
+			"textures/exit.xpm", &w, &h);
 	if (!game->img_wall || !game->img_floor || !game->img_player
 		|| !game->img_collect || !game->img_exit)
 		error_exit("Error\nFailed to load textures", game);

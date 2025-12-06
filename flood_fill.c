@@ -6,7 +6,7 @@
 /*   By: emurbane <emurbane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 16:38:44 by emurbane          #+#    #+#             */
-/*   Updated: 2025/12/05 19:11:26 by emurbane         ###   ########.fr       */
+/*   Updated: 2025/12/06 17:17:48 by emurbane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,13 @@ static void	flood_fill(char **map, int x, int y, t_game *check)
 	if (map[y][x] == '1' || map[y][x] == 'F')
 		return ;
 	if (map[y][x] == 'C')
-		check->collectibles--; // Wykorzystuję pole collectibles jako licznik
+		check->collectibles--;
 	if (map[y][x] == 'E')
-		check->moves = 1; // Flaga znalezienia wyjścia
-
-	map[y][x] = 'F'; // Oznacz jako odwiedzone
+	{
+		check->moves = 1;
+		return ;
+	}
+	map[y][x] = 'F';
 	flood_fill(map, x + 1, y, check);
 	flood_fill(map, x - 1, y, check);
 	flood_fill(map, x, y + 1, check);
@@ -57,15 +59,12 @@ void	check_path(t_game *game)
 	temp_map = copy_map(game);
 	if (!temp_map)
 		error_exit("Error\nMalloc failed in check_path", game);
-
 	check.collectibles = game->collectibles;
 	check.map_w = game->map_w;
 	check.map_h = game->map_h;
-	check.moves = 0; // Używam moves jako flagi 'exit found'
-
+	check.moves = 0;
 	flood_fill(temp_map, game->p_x, game->p_y, &check);
 	free_map(temp_map, game->map_h);
-
 	if (check.collectibles > 0 || check.moves == 0)
-		error_exit("Error\nMap path is not valid (cannot reach all items/exit)", game);
+		error_exit("Error\nMap path is not valid", game);
 }
